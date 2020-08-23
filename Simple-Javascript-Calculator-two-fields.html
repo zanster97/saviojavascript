@@ -1,0 +1,104 @@
+<!--Savio Vaz
+    181739
+	MCA REG
+	SEM V
+-->
+<html>
+
+<head>
+
+<title>Simple Javascript Calculator using 2 fields</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+<script language="javascript" type="text/javascript">
+	function multi(){
+		firstNumber=Number(document.calculator.number1.value);
+		secondNumber=Number(document.calculator.number2.value);
+		if(isNaN(firstNumber) || isNaN(secondNumber)){
+			alert("Enter Numbers only!!!");
+		}else{
+			result=firstNumber*secondNumber;
+			document.calculator.total.value=result;
+		}
+	}
+
+	function addition(){
+		firstNumber=Number(document.calculator.number1.value);
+		secondNumber=Number(document.calculator.number2.value);
+		if(isNaN(firstNumber) || isNaN(secondNumber)){
+			alert("Enter Numbers only!!!");
+		}else{
+			result=firstNumber+secondNumber;
+			document.calculator.total.value=result;
+		}
+	}
+
+	function subtraction(){
+		firstNumber=Number(document.calculator.number1.value);
+		secondNumber=Number(document.calculator.number2.value);
+		if(isNaN(firstNumber) || isNaN(secondNumber)){
+			alert("Enter Numbers only!!!");
+		}else{
+			result=firstNumber-secondNumber;
+			document.calculator.total.value=result;
+		}
+	}
+
+	function division(){
+		firstNumber=Number(document.calculator.number1.value);
+		secondNumber=Number(document.calculator.number2.value);
+		if(isNaN(firstNumber) || isNaN(secondNumber)){
+			alert("Enter Numbers only!!!");
+		}else{
+			if(secondNumber==0){
+				alert("Division by zero not allowed!!!");
+			}else{
+				result=firstNumber/secondNumber;
+				document.calculator.total.value=result;
+			}
+		}
+	}
+
+	function modulus(){
+		firstNumber=Number(document.calculator.number1.value);
+		secondNumber=Number(document.calculator.number2.value);
+		if(isNaN(firstNumber) || isNaN(secondNumber)){
+			alert("Enter Numbers only!!!");
+		}else{
+			result=firstNumber%secondNumber;
+			document.calculator.total.value=result;
+		}
+	}
+</script>
+<style>
+	#myform{
+		margin-top:100px;
+	}
+</style>
+</head>
+
+<body>
+<center>
+	<form name="calculator" id="myform" class="form-group col-md-5">
+		
+		<p class="text-left center-left p-3 mb-2 bg-secondary text-white">Simple Calculator</p>
+
+		<p class="text-left center-left">Number 1:</p> <input type="text" name="number1" class="form-control" placeholder="First number"> <br> 
+
+		<p class="text-left center-left">Number 2:</p> <input type="text" name="number2" class="form-control" placeholder="Second number"> <br>
+
+		<p class="text-left center-left">Get Result:</p> <input type="text" name="total" class="form-control" placeholder="Result"> <br>
+
+		<input type="button" class="btn btn-secondary" value="ADD" onclick="javascript:addition();">
+		<input type="button" class="btn btn-secondary" value="SUB" onclick="javascript:subtraction();">
+		<input type="button" class="btn btn-secondary" value="MUL" onclick="javascript:multi();">
+		<input type="button" class="btn btn-secondary" value="DIV" onclick="javascript:division();">
+		<input type="button" class="btn btn-secondary" value="MOD" onclick="javascript:modulus();">
+
+	</form>
+</center>
+</body>
+</html>
